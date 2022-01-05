@@ -10,14 +10,18 @@ var command: string;
 var distance: int;
 
 while(channel.read(command, distance)) {
-    if (command == "forward") {
-        position += distance;
-    } else if (command == "down") {
-        depth += distance;
-    } else if (command == "up") {
-        depth -= distance;
-        if (depth < 0) {
-            writeln("broaching");
+    select command {
+        when "forward" {
+            position += distance;
+        }
+        when "down" {
+            depth += distance;
+        }
+        when "up" {
+            depth -= distance;
+            if (depth < 0) {
+                writeln("broaching");
+            }
         }
     }
 }

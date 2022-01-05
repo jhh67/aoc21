@@ -11,15 +11,16 @@ var command: string;
 var distance: int;
 
 while(channel.read(command, distance)) {
-    if (command == "forward") {
-        position += distance;
-        depth += aim * distance;
-    } else if (command == "down") {
-        aim += distance;
-    } else if (command == "up") {
-        aim -= distance;
-        if (aim < 0) {
-            writeln("broaching");
+    select command {
+        when "forward" {
+            position += distance;
+            depth += aim * distance;
+        }
+        when "down" {
+            aim += distance;
+        }
+        when "up" {
+            aim -= distance;
         }
     }
 }
