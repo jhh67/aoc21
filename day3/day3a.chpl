@@ -1,7 +1,14 @@
 use IO;
+import Sys;
 
-var input = open("day3.input", iomode.r);
-var channel = input.reader();
+config var input: string;
+
+if (input.isEmpty()) {
+    writeln("You must specify an input file via --input");
+    exit(1);
+}
+var fp = open(input, iomode.r);
+var channel = fp.reader();
 
 
 var counts: [0..15] int; // assume no more than 16-bit numbers, counts # bits set
@@ -29,11 +36,11 @@ var epsilon: uint = 0;
 
 for count in counts[0..n-1] {
     gamma <<= 1;
-    epsilon <<= 1;
     if (count > numbers - count) {
         gamma |= 1;
-    } else {
-        epsilon |= 1;
     }
 }
+writeln(gamma);
+epsilon = ~gamma & ((1 << n) - 1);
+writeln(epsilon);
 writeln(gamma * epsilon);

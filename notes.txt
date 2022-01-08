@@ -1,3 +1,5 @@
+Day 1
+
 Documentation says "import IO" or "use IO", but former gives:
 
 day1.chpl:1: In module 'day1':
@@ -5,3 +7,8 @@ day1.chpl:3: error: 'iomode' undeclared (first use this function)
 
 Code snippets on https://chapel-lang.org/docs/modules/standard/IO.html should include use/import
 statement.
+
+Day 3
+
+Why can a class reference itself but a record cannot? Need better documentation of this either
+yay or nay, esp. in the record primer. Seems like such a thing would be popular. 
