@@ -1,11 +1,11 @@
 use IO;
-import Sys;
+import ys;
 
 config var input: string;
 
 if (input.isEmpty()) {
     writeln("You must specify an input file via --input");
-    exit(1);
+    sys.exit(1);
 }
 var fp = open(input, iomode.r);
 var channel = fp.reader();

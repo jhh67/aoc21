@@ -12,3 +12,5 @@ Day 3
 
 Why can a class reference itself but a record cannot? Need better documentation of this either
 yay or nay, esp. in the record primer. Seems like such a thing would be popular. 
+
+(key, value) = buffer.split(':') would be useful.
